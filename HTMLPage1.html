@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Elvinim ❤</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: pink; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        overflow: hidden;
+    }
+
+    .heart {
+        width: 120px;
+        height: 120px;
+        background: red;
+        position: relative;
+        transform: rotate(-45deg);
+        cursor: pointer;
+        transition: transform 1s ease, top 1s ease;
+    }
+
+ 
+    .heart:before,
+    .heart:after {
+        content: "";
+        width: 120px;
+        height: 120px;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .heart:before { top: -60px; left: 0; }
+    .heart:after  { left: 60px; top: 0; }
+
+    /* Yazı */
+    #message {
+        position: absolute;
+        bottom: 30px;
+        font-size: 30px;
+        color: red;
+        font-weight: bold;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="heart" id="kalp"></div>
+<div id="message">Elvinim seni çok seviyorum ❤️</div>
+
+<script>
+    const kalp = document.getElementById("kalp");
+    const message = document.getElementById("message");
+
+    kalp.addEventListener("click", () => {
+        kalp.style.transform = "rotate(-45deg) translateY(-200px)";
+        message.style.opacity = "1";
+    });
+</script>
+
+</body>
+</html>
